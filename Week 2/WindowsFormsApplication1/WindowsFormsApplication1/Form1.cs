@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using System.Diagnostics;
 
 namespace WindowsFormsApplication1
 {
@@ -95,23 +87,44 @@ namespace WindowsFormsApplication1
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PrintDialog pd = new PrintDialog();
-            if (pd.ShowDialog() == DialogResult.OK)
-            {
-                printDocument1.Print();
-            }
+            printDialog1.ShowDialog();
+            printDialog1.AllowSelection = true;
+            printDialog1.AllowSomePages = true;
 
         }
 
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string message = "Unsaved Work will be lost, Are you sure?";
+            string title = "Warning";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                richTextBox1.Text = "";
+            }
+            else
+            {
+
+            }
 
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            string message = "Unsaved Work will be lost, Are you sure?";
+            string title = "Exit";
+            MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.OK)
+            {
+                this.Close();
+            }
+            else
+            {
+
+            }
         }
 
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)

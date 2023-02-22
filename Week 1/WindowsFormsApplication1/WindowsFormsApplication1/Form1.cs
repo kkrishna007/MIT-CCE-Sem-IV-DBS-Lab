@@ -104,40 +104,27 @@ namespace WindowsFormsApplication1
 
         private void button12_Click(object sender, EventArgs e)
         {
-            
+            Op2 = input;
+            double num1, num2;
+            double.TryParse(Op1, out num1);
+            double.TryParse(Op2, out num2);
             if (Operator == '+')
-            {
-                Op2 = input;
-                double num1, num2;
-                double.TryParse(Op1, out num1);
-                double.TryParse(Op2, out num2); 
+            {                
                 res = num1 + num2; 
                 this.textBox1.Text = res.ToString();
             }
             else if (Operator == '-')
             {
-                Op2 = input;
-                double num1, num2;
-                double.TryParse(Op1, out num1);
-                double.TryParse(Op2, out num2); 
                 res = num1 - num2; 
                 textBox1.Text = res.ToString();
             }
             else if (Operator == '*')
             {
-                Op2 = input;
-                double num1, num2;
-                double.TryParse(Op1, out num1);
-                double.TryParse(Op2, out num2); 
                 res = num1 * num2; 
                 textBox1.Text = res.ToString();
             }
             else if (Operator == '/')
-            {
-                Op2 = input;
-                double num1, num2;
-                double.TryParse(Op1, out num1);
-                double.TryParse(Op2, out num2); 
+            { 
                 if (num2 != 0)
                 {
                     res = num1 / num2; 
@@ -150,31 +137,21 @@ namespace WindowsFormsApplication1
             }
             else if (Operator == 's')
             {
-                double num1;
-                double.TryParse(Op1, out num1);
                 res = num1 * num1;
                 textBox1.Text = res.ToString();
             }
             else if (Operator == 'r')
             { 
-                double num1;
-                double.TryParse(Op1, out num1);
                 res = Math.Sqrt(num1);
                 textBox1.Text = res.ToString();
             }
             else if (Operator == 'a')
             {
-                Op2 = input;
-                double num1, num2;
-                double.TryParse(Op1, out num1);
-                double.TryParse(Op2, out num2);
                 res = Math.Pow(num1 , num2);
                 textBox1.Text = res.ToString();
             }
             else if (Operator == 't')
             {
-                double num1;
-                double.TryParse(Op1, out num1);
                 res = Math.Sin((num1 * (Math.PI)) / 180);
                 textBox1.Text = res.ToString();
             }
